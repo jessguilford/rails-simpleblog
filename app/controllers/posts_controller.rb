@@ -3,14 +3,18 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def new
     @post = Post.new
-    # redirect_to 'about'
   end
 
   def create
-    Post.create(post_params)
-    redirect_to posts_path
+    @post = Post.create(post_params)
+    redirect_to @post
+    # redirect_to posts_path
   end
 
   private
