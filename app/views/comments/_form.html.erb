@@ -1,0 +1,14 @@
+<h4>Add Comment</h4>
+<%= form_for([@post, @post.comments.build]) do |form| %>
+  <p>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </p>
+  <p>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </p>
+  <p>
+    <%= form.submit 'Leave comment' %>
+  </p>
+<% end %>
